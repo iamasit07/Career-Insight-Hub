@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Post</title>
+  <link rel="stylesheet" href="./create.css">
+</head>
+<body>
+
+<div class="popup-container">
+  <div class="popup-header">
+    <h2>Create Post</h2>
+    <div class="user-profile">
+      <img class="profile-icon" src="./5 boy.png" alt="Profile Icon">
+      <span>Tushar</span>
+    </div>
+  </div>
+  <div class="popup-content">
+    <textarea placeholder="Type your content..." rows="4"></textarea>
+    <input type="file" id="attachmentInput" style="display: none;" accept="image/*, .pdf, .doc, .docx"> <!-- Hidden file input -->
+    <button class="Import-button" onclick="document.getElementById('attachmentInput').click();">Add Attachment</button> <!-- Trigger file input when this button is clicked -->
+    <button class="post-button"><a href="./sharing.html" style="text-decoration: none; color: white;">Post</a></button>
+    <p class="post-button" style="display: none;">posted</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('attachmentInput').addEventListener('change', function(event) {
+    const file = event.target.files[0]; // Get the selected file
+    if (file) {
+      const fileName = file.name;
+      alert("File selected: " + fileName);
+      // You can perform further actions with the selected file here
+    }
+  });
+</script>
+
+</body>
+</html>
